@@ -2,6 +2,7 @@ app:
     name: oracle
     code: ORACLE
     notify: mmehrotra@ecloudcontrol.com
+
     
 build:
     version: 23.0
@@ -33,4 +34,4 @@ volumes:
 properties:
     ORACLE_DB_USER: 'C##JANAVIDEOPD'
     ORACLE_DB_PASSWORD: {vault: ORACLE_DB_PASSWORD}
-    revision : 17
+    revision : 18
