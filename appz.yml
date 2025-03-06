@@ -34,4 +34,4 @@ volumes:
 properties:
     ORACLE_DB_USER: 'C##JANAVIDEOPD'
     ORACLE_DB_PASSWORD: {vault: ORACLE_DB_PASSWORD}
-    revision : 21
+    revision : 22
