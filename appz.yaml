@@ -1,0 +1,36 @@
+app:
+    name: oracle
+    code: ORACLE
+    notify: srswain@ecloudcontrol.com
+    
+build:
+    version: 23.0
+    env: PROD
+    build_file: none
+    output_files: output/*.zip
+    image_template: oracle-23.0
+    
+deploy:
+    context: pdapplication/PROD
+    type: statefulset
+    ingress: none
+    replicas: 1
+    port:
+    - 1521
+    - 5500
+    
+volumes:
+  - claim: oradata-data
+    mount: /opt/oracle/oradata
+    name: oradata
+    size: 50Gi
+    mode: ReadWriteOnce
+  - claim: dpdump-data
+    mount: /opt/oracle/admin/FREE/dpdump
+    name: dpdump
+    size: 50Gi
+    mode: ReadWriteOnce
+properties:
+    ORACLE_DB_USER: 'C##JANAVIDEOPD'
+    ORACLE_DB_PASSWORD: {vault: ORACLE_DB_PASSWORD}
+    revision : 13
