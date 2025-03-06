@@ -6,7 +6,7 @@ app:
     
 build:
     version: 23.0
-    env: PROD
+    env: DEV
     build_file: none
     output_files: output/*.zip
     image_template: oracle-23.0
