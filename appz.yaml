@@ -1,7 +1,7 @@
 app:
     name: oracle
     code: ORACLE
-    notify: srswain@ecloudcontrol.com
+    notify: mmehrotra@ecloudcontrol.com
     
 build:
     version: 23.0
@@ -11,7 +11,7 @@ build:
     image_template: oracle-23.0
     
 deploy:
-    context: pdapplication/PROD
+    context: medhavi20/DEV
     type: statefulset
     ingress: none
     replicas: 1
